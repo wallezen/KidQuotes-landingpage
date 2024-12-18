@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+html,
+body {
+  @apply bg-gradient-to-b from-purple-50 to-pink-50 min-h-screen font-sans dark:from-purple-950 dark:to-pink-950;
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+.bubble {
+  @apply absolute rounded-full bg-opacity-20 animate-float;
+}
